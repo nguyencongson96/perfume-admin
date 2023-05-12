@@ -6,7 +6,9 @@ import styles from "../../../styles/order/details.module.css";
 const ExpandedRow = (props) => {
   const { record } = props,
     id = record._id;
-  const detail = useSelector((state) => state.ordersReducer.detail.cart.detail);
+  const detail = useSelector((state) => state.ordersReducer.detail);
+
+  console.log(detail);
 
   useEffect(() => {
     handleDispatch.order.list.detail(id);
@@ -17,7 +19,7 @@ const ExpandedRow = (props) => {
       <h1 className={styles.header}>Cart</h1>
       <div className={styles.list}>
         {Object.keys(detail).length > 0 &&
-          detail.map((item, index) => (
+          detail.cart.detail.map((item, index) => (
             <div key={index} className={styles.item}>
               <img src={item.image} className={styles.image} alt={item._id} />
               <div className={styles.detail}>
