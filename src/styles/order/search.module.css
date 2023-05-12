@@ -1,0 +1,41 @@
+.search_input {
+  display: flex;
+  font-size: 1rem;
+  margin: 20px auto;
+}
+
+.search_input > * {
+  padding: 5px;
+  font-size: 1rem;
+  font-family: "Ysabeau", sans-serif;
+}
+
+.search_input select {
+  border: 1px solid gray;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.value_input {
+  border: 1px solid gray;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 40%;
+  padding-left: 10px;
+  border-left: none;
+}
+
+.submit {
+  position: relative;
+  padding: 7px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  cursor: pointer;
+  transition: all 200ms linear;
+}
+
+.submit:active {
+  font-weight: bold;
+  top: 1px;
+}

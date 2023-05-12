@@ -1,0 +1,11 @@
+.table td,
+.table thead,
+.table input,
+.table textarea {
+  font-family: "Ysabeau", sans-serif;
+}
+
+.layout {
+  width: 95%;
+  margin: auto;
+}

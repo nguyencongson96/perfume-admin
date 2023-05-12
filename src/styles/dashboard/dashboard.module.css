@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding: 30px;
+}
+
+.nav_bar {
+  min-width: 10%;
+  border-right: 1px solid gray;
+  height: 100%;
+  position: sticky;
+  top: 30px;
+}
+
+.outlet {
+  max-width: 90%;
+}
+
+.nav_bar h1 {
+  font-size: 2.2rem;
+  font-weight: bolder;
+}
+
+.nav_bar ul {
+  list-style-type: none;
+  margin-left: 10px;
+  margin-top: 7px;
+}
+
+.nav_bar li {
+  margin-bottom: 7px;
+}
+
+.nav_bar a {
+  appearance: none;
+  text-decoration: none;
+}
+
+.active {
+  font-weight: 700;
+  text-decoration: underline !important;
+}

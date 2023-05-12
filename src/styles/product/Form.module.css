@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+:root {
+  --background-color: rgba(223, 249, 251, 0.95);
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Ysabeau", sans-serif;
+  z-index: 2;
+}
+
+.form {
+  position: fixed;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  padding: 15px 30px;
+  background-color: var(--background-color);
+  font-size: 1.05rem;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px 2px gray;
+  border: 1px solid gray;
+  overflow: hidden;
+}
+
+.title {
+  font-family: "Lobster", cursive;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bolder;
+  margin-bottom: 15px;
+}
+
+.input {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 3% 4%;
+  height: 70vh;
+}
+
+.input > * {
+  width: 48%;
+}
+
+.input_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.input_content > * {
+  display: flex;
+  align-items: center;
+}
+
+.input_product {
+  font-family: "Ysabeau", sans-serif;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: none;
+  transition: 200ms all ease-in-out;
+  margin-right: 2%;
+  margin-top: 5px;
+  padding: 2px 7px;
+  width: 96%;
+  font-size: 1.05rem;
+}
+
+.input_product:hover,
+.input_product:focus-visible {
+  background-color: rgba(255, 255, 255, 0.4);
+  font-weight: bolder;
+}
+
+.form svg {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 3%;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.delete {
+  opacity: 0.3;
+  transition: 300ms all linear;
+}
+
+.delete:hover,
+.delete:focus-visible {
+  opacity: 1;
+}
+
+.description {
+  height: 465px;
+}
+
+.description textarea {
+  height: 85%;
+  width: 100%;
+}
+
+.btn {
+  margin: 10px auto;
+  width: 18%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn > * {
+  position: relative;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-family: "Ysabeau", sans-serif;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 200ms all linear;
+}
+
+.btn > *:active {
+  top: 1px;
+}
+
+.form .close {
+  width: 30px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 100ms all linear;
+}
+
+.close:hover,
+.close:focus-visible {
+  fill: red;
+}
+
+.capacity-price-stock input {
+  width: 60px;
+  margin: 0 8px;
+  padding: 2px 4px;
+}
+
+.sub_header {
+  border-bottom: 1px solid gray;
+  padding-bottom: 3px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bolder;
+}
+
+.italic {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #ff7979;
+}

@@ -1,0 +1,74 @@
+.sub_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sub_header > * {
+  padding: 7px 10px;
+  width: 12%;
+  border-radius: 5px;
+  background-color: transparent;
+  font-family: "Ysabeau", sans-serif;
+  font-size: 1rem;
+  transition: 500ms all linear;
+}
+
+.btn_add {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  border: none;
+}
+
+.btn_add > svg {
+  padding: 2px;
+  width: 18%;
+  fill: gray;
+  margin-left: 3px;
+  cursor: pointer;
+}
+
+.btn_add > span {
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+.search {
+  width: 70%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search > * {
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-family: "Ysabeau", sans-serif;
+  font-size: 1rem;
+}
+
+.search_input {
+  margin-right: 10px;
+  width: 20%;
+  background-color: transparent;
+  transition: 500ms all linear;
+}
+
+.search_btn {
+  cursor: pointer;
+}
+
+.sub_header > select:focus-visible,
+.search_input:focus-visible {
+  background-color: white;
+  outline: 1px solid black;
+}
+
+.search_input:focus-visible {
+  width: 50%;
+}

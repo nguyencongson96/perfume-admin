@@ -1,0 +1,32 @@
+.pagination {
+  width: 35%;
+  margin: auto;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+  font-size: 1.1rem;
+  margin-top: 40px;
+}
+
+.pagination > * {
+  padding-top: 11px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  width: 50px;
+  aspect-ratio: 1/1;
+  font-weight: bold;
+  transition: 400ms all linear;
+}
+
+.pagination > *:hover,
+.pagination > *:focus-visible {
+  background-color: #fd79a8;
+}
+
+.disable {
+  pointer-events: none;
+  opacity: 0.6;
+}

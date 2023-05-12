@@ -1,0 +1,22 @@
+.loading {
+  position: fixed;
+  top: 48%;
+  left: 48%;
+  width: 5%;
+  aspect-ratio: 1/1;
+  border: 9px solid rgba(236, 240, 241, 0.5);
+  border-top-color: #3498db;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+  cursor: wait;
+  z-index: 2;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
