@@ -7,12 +7,14 @@ const LazyLoading = () => {
   const isLoading = useSelector((state) => state.loadingReducer.status);
   return (
     isLoading && (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className={styles.loading}
-      ></motion.div>
+      <div className={styles.container}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className={styles.loading}
+        ></motion.div>
+      </div>
     )
   );
 };
