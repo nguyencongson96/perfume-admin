@@ -7,7 +7,7 @@ const productAPI = {
       (result, key) => (result += `${key}=${queryObj[key]}&`),
       "?"
     );
-    return axiosClient.get(`filter${queryString}`);
+    return axiosClient.get(`products${queryString}`);
   },
   addNew: (data) => axiosClient.post(url, data),
   update: (data) => axiosClient.patch(url, data),

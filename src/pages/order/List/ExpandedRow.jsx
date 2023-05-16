@@ -6,9 +6,7 @@ import styles from "../../../styles/order/details.module.css";
 const ExpandedRow = (props) => {
   const { record } = props,
     id = record._id;
-  const detail = useSelector((state) => state.ordersReducer.detail);
-
-  console.log(detail);
+  const detail = useSelector((state) => state.orders.detail);
 
   useEffect(() => {
     handleDispatch.order.list.detail(id);

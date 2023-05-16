@@ -1,30 +1,72 @@
-const initStateReducer = {
-  list: [],
-  pages: 1,
-  filter: {},
-  detail: {},
-};
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import orderAPI from "../../../service/orderAPI";
 
-const ordersReducer = (state = initStateReducer, action) => {
-  switch (action.type) {
-    case "GET_ORDERS_ALL":
-      return { ...state, list: action.payload || [], pages: action.pages || 1 };
-
-    case "GET_DETAIL_ORDER":
-      return { ...state, detail: action.payload };
-
-    case "UPDATE_ORDER":
-      const updateOrder = action.payload;
-      const index = state.list.findIndex((item) => item._id === updateOrder._id);
-      state.list.splice(index, 1, updateOrder);
-      return { ...state };
-
-    case "FILTER_ORDER_OBJ":
-      return { ...state, filter: { ...state.filter, ...action.payload } };
-
-    default:
-      return state;
+export const getAllOrders = createAsyncThunk("orderAdmin/getAll", async (query, thunkAPI) => {
+  try {
+    const res = await orderAPI.filter(query);
+    return res;
+  } catch (error) {
+    thunkAPI.rejectWithValue(error.message);
   }
-};
+});
 
-export default ordersReducer;
+export const getOrderDetail = createAsyncThunk("orderAdmin/getDetail", async (id, thunkAPI) => {
+  try {
+    const res = await orderAPI.detail(id);
+    return res;
+  } catch (error) {
+    thunkAPI.rejectWithValue(error.message);
+  }
+});
+
+export const getOrderUpdate = createAsyncThunk("orderAdmin/getOrderUpdate", async (order, thunkAPI) => {
+  try {
+    const res = await orderAPI.update(order._id, order);
+    return res;
+  } catch (error) {
+    thunkAPI.rejectWithValue(error.message);
+  }
+});
+
+const ordersSlice = createSlice({
+  name: "orders",
+  initialState: {
+    list: [],
+    pages: 1,
+    filter: { page: 1 },
+    detail: {},
+  },
+  reducers: {
+    getOrdersAll: (state, action) => {
+      const { list, pages } = action.payload;
+      list && (state.list = list);
+      pages && (state.pages = pages);
+    },
+    getDetailOrder: (state, action) => {
+      state.detail = action.payload;
+    },
+    updateOrder: (state, action) => {
+      const index = state.list.findIndex((item) => item._id === action.payload._id);
+      state.list.splice(index, 1, action.payload);
+    },
+    filterOrderObj: (state, action) => {
+      state.filter = { ...state.filter, ...action.payload };
+    },
+  },
+  extraReducers: {
+    [getAllOrders.fulfilled]: (state, action) => {
+      const { list, numberOfPages } = action.payload;
+      list && (state.list = list);
+      numberOfPages && (state.pages = numberOfPages);
+    },
+    [getOrderDetail.fulfilled]: (state, action) => {
+      state.detail = action.payload;
+    },
+    [getOrderUpdate.fulfilled]: (state, action) => {
+      const index = state.list.findIndex((item) => item._id === action.payload._id);
+      state.list.splice(index, 1, action.payload);
+    },
+  },
+});
+
+export default ordersSlice;

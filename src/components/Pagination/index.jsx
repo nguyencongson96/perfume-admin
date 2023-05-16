@@ -4,9 +4,7 @@ import styles from "../../styles/Pagination.module.css";
 import handleDispatch from "../../utils/handleDispatch";
 
 const Pagination = ({ type }) => {
-  const { pages, filter } = useSelector((state) =>
-    type === "product" ? state.productsReducer : state.ordersReducer
-  );
+  const { pages, filter } = useSelector((state) => (type === "product" ? state.products : state.orders));
   const handleFilter = (e) => handleDispatch[type].list.filter(e);
   const isFirst = filter.page === 1,
     isLast = filter.page === pages;

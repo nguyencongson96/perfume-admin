@@ -8,7 +8,8 @@ import { useSelector } from "react-redux";
 import handleDispatch from "../../utils/handleDispatch";
 
 const ProductLayout = () => {
-  const { status } = useSelector((state) => state.productsReducer.isDetail);
+  // console.log(useSelector((state) => state));
+  const { status } = useSelector((state) => state.products.isDetail);
 
   useEffect(() => {
     handleDispatch.product.list.filter({ sort: "nac", page: 1 });

@@ -1,10 +1,9 @@
 import { Provider } from "react-redux";
-import store from "./redux/store/index";
+import store from "./redux/store";
 import "./styles/global.css";
 import { Route, Routes } from "react-router-dom";
 import ProductLayout from "./pages/product";
 import AdminRoutes from "./routes/admin";
-import LazyLoading from "./components/loading";
 import OrderLayout from "./pages/order";
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
           <Route path="order" element={<OrderLayout />} />
         </Route>
       </Routes>
-      <LazyLoading />
     </Provider>
   );
 }

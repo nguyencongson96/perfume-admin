@@ -7,7 +7,7 @@ import handleDispatch from "../../utils/handleDispatch";
 
 const InputComponent = (props) => {
   const { field, detail, typeInput } = props.item;
-  const { info } = useSelector((state) => state.productsReducer.isDetail);
+  const { info } = useSelector((state) => state.products.isDetail);
 
   switch (typeInput) {
     case "text":

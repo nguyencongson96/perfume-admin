@@ -7,7 +7,7 @@ import styles from "../../../styles/order/item.module.css";
 import { Form, Table, Typography, Tag } from "antd";
 
 const OrderList = () => {
-  const list = useSelector((state) => state.ordersReducer.list).map((item) => ({
+  const list = useSelector((state) => state.orders.list).map((item) => ({
     key: item._id,
     ...item,
     formattedTotal: new Intl.NumberFormat("en-IN", {

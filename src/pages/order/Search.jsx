@@ -5,9 +5,9 @@ import SelectInput from "../../components/select/Select";
 import { useSelector } from "react-redux";
 
 const SearchInput = () => {
-  const { filter } = useSelector((state) => state.ordersReducer);
+  const { filter } = useSelector((state) => state.orders);
   const [searchVal, setSearchVal] = useState(Object.values(filter)[0] || "");
-  const [typeVal, setTypeVal] = useState(Object.keys(filter)[0] || "name");
+  const [typeVal, setTypeVal] = useState("name");
 
   const handleSearch = () => handleDispatch.order.list.filter({ [typeVal]: searchVal });
 

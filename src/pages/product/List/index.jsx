@@ -6,16 +6,16 @@ import ProductListHeader from "./Header";
 import Pagination from "../../../components/Pagination";
 
 const ProductList = () => {
-  const { list, pages } = useSelector((state) => state.productsReducer);
-  const { page } = useSelector((state) => state.productsReducer.filter);
-  const isLoading = useSelector((state) => state.loadingReducer.status);
+  const { list, pages } = useSelector((state) => state.products);
+  const { page } = useSelector((state) => state.products.filter);
+  const displayList = list.slice(0, 12);
 
   return (
     <div className={styles.container}>
       <ProductListHeader />
       <div className={styles.pages}> {list.length > 0 && `Page ${page} / ${pages}`}</div>
-      <div className={styles.list} style={isLoading ? { filter: "blur(2px)", opacity: 0.5 } : {}}>
-        {list.map((item, index) => (
+      <div className={styles.list}>
+        {displayList.map((item, index) => (
           <ProductItem infoItem={item} key={`${item._id} ${index}`} />
         ))}
       </div>

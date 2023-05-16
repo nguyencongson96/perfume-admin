@@ -7,7 +7,7 @@ import handleDispatch from "../../../utils/handleDispatch";
 import { motion } from "framer-motion";
 
 const ProductForm = () => {
-  const { info } = useSelector((state) => state.productsReducer.isDetail);
+  const { info } = useSelector((state) => state.products.isDetail);
 
   console.log("Form rendered");
 

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import SelectInput from "../../../../components/select/Select";
 
 const ProductListHeader = () => {
-  const { sort } = useSelector((state) => state.productsReducer.filter);
+  const { sort } = useSelector((state) => state.products.filter);
   const [currentName, setCurrentName] = useState("");
   const filter = (e) => handleDispatch.product.list.filter(e);
 
